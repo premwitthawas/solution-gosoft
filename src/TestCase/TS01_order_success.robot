@@ -3,11 +3,12 @@ Library    SeleniumLibrary
 Variables    ../Poms/data/data.py
 Resource      ../Resources/TS01_order_success.resource
 Test Setup    Open Browser    url=${URL}    browser=${BROWSER}
-# Test Teardown    Close Browser
+Test Teardown    Close Browser
 *** Test Cases ***
 สั่งซื้ออสินค้าเลือกจัดส่งตามที่อยู่และชำระเงินด้วยบัตรเครดิต
     เข้าสู่ระบบด้วยอีเมลและรหัสผ่าน    email=${EMAIL}    password=${PASSWORD}
     ข้ามALL member
+    #Sleep    time_=10s
     ค้นหา ข้อมูลสินค้า โดยชื่อ สินค้า    product_name=${PRODUCTNAME}
     ตรวจสอบผลค้นหาของสินค้า    title=${EXPECT_TITLE_SEARCH}    price=${EXPECT_PRICE_SEARCH}
     เลือกสินค้า
@@ -23,6 +24,8 @@ Test Setup    Open Browser    url=${URL}    browser=${BROWSER}
     ...    home_number=${DATA_SET_SHIPPING_HOME_NUMBER}    moo=${DATA_SET_SHIPPING_MOO_NUMBER}    
     ...    prov=${DATA_SET_SHIPPING_PROV}    amp=${DATA_SET_SHIPPING_AMP}    tam=${DATA_SET_SHIPPING_TAM}
     ชำระเงินและเลือกวิธีการชำระ
-    ตรวจสอบข้อมูลก่อนชำระเงิน    address=${DATA_SET_SHIPPING_FULL_ADDEES}    title=${EXPECT_TITLE_SEARCH}    
+    ตรวจสอบข้อมูลก่อนชำระเงิน    address=${DATA_SET_SHIPPING_FULLNAME}    title=${EXPECT_TITLE_SEARCH}    
     ...    quantity=5    price=${EXPECT_TOTAL_PRICE}    
     ...    shipping_price=${EXPECT_TOTAL_SHIPING}    total=${EXPECT_TOTAL_SUM}
+    ชำระเงินผ่านบัตรเครดิต    fullname=${DATA_SET_SHIPPING_FULLNAME}    card_number=${DATA_SET_PAYMENT_NUMBER}
+    ...    card_ex=${DATA_SET_PAYMENT_DATE_EX}    card_cvv=${DATA_SET_PAYMENT_CVV_CODE}

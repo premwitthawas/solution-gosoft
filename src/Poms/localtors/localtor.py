@@ -52,5 +52,5 @@ page_payment_title="xpath:/html/body/div[3]/div/form/div[1]/div[2]/div[2]/table/
 page_payment_price="xpath:/html/body/div[3]/div/form/div[1]/div[2]/div[2]/table/tbody[4]/tr[1]/td[2]/b"
 page_payment_shipping_price="xpath:/html/body/div[3]/div/form/div[1]/div[2]/div[2]/table/tbody[4]/tr[2]/td[2]/b"
 page_payment_total_price="id:totalAmount"
-page_payment_address="xpath:/html/body/div[3]/div/form/div[1]/div[2]/div[2]/table/tbody[1]/tr[1]/td/div[2]/span"
+page_payment_address="xpath:/html/body/div[3]/div/form/div[1]/div[2]/div[2]/table/tbody[1]/tr[1]/td/div/span"
 page_payment_quantity="xpath:/html/body/div[3]/div/form/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[3]"
